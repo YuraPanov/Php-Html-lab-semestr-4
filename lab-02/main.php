@@ -18,8 +18,6 @@
                 <option value="Синий">
                 <option value="Зелёный">
             </datalist>
-
         </form>
-
     </main>
 </html>
