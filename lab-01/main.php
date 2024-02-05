@@ -9,11 +9,13 @@
             <h1>Языки программирования</h1>
             <figure>
                 <img src="https://www.python.org/static/img/python-logo.png"  alt=""/>
-                <figcaption>Ну смотрите питон</figcaption>
+                <figcaption>Логотип Python</figcaption>
             </figure>
-            <article>Изучать Python очень весело</article>
+            <article>
+            <p>Изучать Python очень весело</p>
             <p>Но нужно читать и практиковаться</p>
             <p>И сильно-сильно стараться</p>
+            </article>
         </section>
         <nav>
             <a href="https://www.youtube.com">Посмотри тут</a><br>
