@@ -1,26 +1,23 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
-/*ul {*/
-/*    list-style-type: none;*/
-/*    padding: 0;*/
+/*body {*/
+/*    background-color: red;*/
 /*}*/
 
-li {
-    padding: 10px;
-    margin: 5px;
-    color: white; /* цвет текста */
-}
+/*h1 {*/
+/*    color: chocolate;*/
+/*}*/
+
+/*main {*/
+/*    color: darkgoldenrod;*/
+/*}*/
 
 .color1 {
-    background-color: #be2d2d; /* цвет фона для Пункта 1 */
+    background-color: #ff0000; /* Красный */
 }
 
 .color2 {
-    background-color: #00ff00; /* цвет фона для Пункта 2 */
+    background-color: #0000ff; /* Синий */
 }
 
 .color3 {
-    background-color: #0000ff; /* цвет фона для Пункта 3 */
+    background-color: #00ff00; /* Зелёный */
 }
