@@ -2,10 +2,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
+/*ul {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*}*/
 
 li {
     padding: 10px;
@@ -14,7 +14,7 @@ li {
 }
 
 .color1 {
-    background-color: #ff0000; /* цвет фона для Пункта 1 */
+    background-color: #be2d2d; /* цвет фона для Пункта 1 */
 }
 
 .color2 {

@@ -7,10 +7,13 @@
         <meta name="viewport" content="width=device-width, init-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
+    <style>
+        /*h1 {color: brown}*/
+    </style>
     <body>
 
         <header>
-            <h1>Выбири свой цвет</h1>
+            <h1>Выбери свой цвет</h1>
         </header>
         <main>
             <form>
