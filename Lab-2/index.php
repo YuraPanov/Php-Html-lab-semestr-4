@@ -74,5 +74,15 @@ foreach ($array as $ellement) {
 echo "\n". $result = sqrt($sumSquares). "\n";
 
 // Working with rounding functions: round, ceil, floor.
+$round1 = round(sqrt(379), 1);
+$round2 = round(sqrt(379), 2);
+echo $round1. "\n"; echo $round2. "\n";
 
 
+$sqrt = sqrt(587);
+
+$round3 = array(
+    'floor' => floor($sqrt),
+    'ceil' => ceil($sqrt)
+);
+print_r($round3);
