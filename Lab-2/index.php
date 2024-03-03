@@ -152,7 +152,7 @@ function printStringReturnNumber($string)
 }
 
 $my_num = printStringReturnNumber("\nHello, World!");
-echo "\nLen this sentence".$my_num;
+echo "\nLen this sentence: ".$my_num;
 
 // №4 (＞︿＜)
 
