@@ -106,7 +106,36 @@ for($i = 0; $i < 10; $i++){
 print_r($arrayRandoNumbers);
 
 // Working with abs.
-echo "\n Working with abs.";
+echo "\nWorking with abs.";
 $a = 10; $b = 35;
 $absSubtraction = abs($a - $b);
-echo "\n". $absSubtraction;
+echo "\n". $absSubtraction."\n";
+
+$arrayABS = [1, 2, -1, -2, 3, -3];
+
+foreach ($arrayABS as $key => $number){
+    $arrayABS[$key] = abs($number);
+}
+print_r($arrayABS);
+
+// others \(￣︶￣*\)).
+// №1
+$givenNumber = rand(10,100);
+$arrayDividers = [];
+echo "\nDividers:". $givenNumber." is\n";
+for ($i = 1; $i <= $givenNumber; $i++){
+    if ($givenNumber % $i == 0){
+        $arrayDividers[] = $i;
+    }
+}
+print_r($arrayDividers);
+// №2
+$givenArray =  [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+$sum = 0; $elementToSum = 0;
+foreach ($givenArray as $element){
+    $sum += $element;
+    if ($sum > 10){
+        break;}
+    $elementToSum++;
+}
+echo "Element need to sum 10: ".$elementToSum."\n";
