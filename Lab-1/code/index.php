@@ -1,2 +1,5 @@
 <?php
-echo phpinfo();
+
+
+$string = 'qwerty1111';
+echo $string;
