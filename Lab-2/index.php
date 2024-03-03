@@ -155,3 +155,5 @@ $my_num = printStringReturnNumber("\nHello, World!");
 echo "\nLen this sentence".$my_num;
 
 // №4 (＞︿＜)
+
+
