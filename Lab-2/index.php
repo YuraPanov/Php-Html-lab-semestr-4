@@ -50,9 +50,11 @@ $answer /= 2;
 $answer -= $myNum;
 echo $answer . "\n";
 
-// 6)
+// 6) Mathematical functions
 echo "\nTask №6 (Mathematical functions) \n";
 // work with %
+echo "\nWork with %.\n";
+
 $a = 10; $b = 2;
 echo $a % $b . "\n";
 if ($a % $b == 0) {
@@ -62,8 +64,8 @@ else{
     echo "Делится с остатком\n";
 }
 
-// work with sqrt and pow
-
+// Working with sqrt and pow.
+echo "\nWork with sqrt and pow.\n";
 $st = pow( 2, 10);
 $sq = sqrt(245);
 $array = [4, 2, 5, 19, 13 , 0, 10];
@@ -74,6 +76,7 @@ foreach ($array as $ellement) {
 echo "\n". $result = sqrt($sumSquares). "\n";
 
 // Working with rounding functions: round, ceil, floor.
+echo "\nWorking with rounding functions: round, ceil, floor.\n";
 $round1 = round(sqrt(379), 1);
 $round2 = round(sqrt(379), 2);
 echo $round1. "\n"; echo $round2. "\n";
@@ -86,3 +89,24 @@ $round3 = array(
     'ceil' => ceil($sqrt)
 );
 print_r($round3);
+
+// working with min and max
+echo "\nWorking with min and max.";
+$arrayMinMax = [4, -2, 5, 19, -130, 0, 10];
+echo "\nmin in array: ".min($arrayMinMax). "\n";
+echo "max in array: ".max($arrayMinMax). "\n";
+
+// working with random.
+echo "\nWorking with min and max.\n";
+echo "Random number from 1 to 100: ".rand(1, 100)."\n";
+$arrayRandoNumbers = array();
+for($i = 0; $i < 10; $i++){
+    $arrayRandoNumbers[] = rand(1,100);
+}
+print_r($arrayRandoNumbers);
+
+// Working with abs.
+echo "\n Working with abs.";
+$a = 10; $b = 35;
+$absSubtraction = abs($a - $b);
+echo "\n". $absSubtraction;
