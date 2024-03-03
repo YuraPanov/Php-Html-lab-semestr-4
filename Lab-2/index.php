@@ -143,7 +143,7 @@ echo "Element need to sum 10: ".$elementToSum."\n";
 /* №3
 Task : Write the print String Return Number() function, which prints a string and returns a numeric value.
        Write the return value of your function to a variable named $my_num.
-       Print out $my_num.
+       Print out $my_num. pan_yurek
 */
 function printStringReturnNumber($string)
 {
