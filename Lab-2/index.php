@@ -139,3 +139,18 @@ foreach ($givenArray as $element){
     $elementToSum++;
 }
 echo "Element need to sum 10: ".$elementToSum."\n";
+
+/* №3
+Task : Write the print String Return Number() function, which prints a string and returns a numeric value.
+       Write the return value of your function to a variable named $my_num.
+       Print out $my_num.
+*/
+function printStringReturnNumber($string)
+{
+    echo $string;
+    return strlen($string);
+}
+
+$my_num = printStringReturnNumber("\nHello, World!");
+echo "\nLen this sentence".$my_num;
+
