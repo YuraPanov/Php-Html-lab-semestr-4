@@ -173,8 +173,7 @@ echo  increaseEnthusiasm(repeatTreeTimes('1'));
 
 function cut($string, $integer = 10):string
 {
-    $stringNew = substr($string,0,$integer);
-    return $stringNew;
+    return substr($string,0,$integer);
 }
 
 echo "\n".cut("0123456789",2)."\n";
