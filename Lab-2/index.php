@@ -145,7 +145,7 @@ Task : Write the print String Return Number() function, which prints a string an
        Write the return value of your function to a variable named $my_num.
        Print out $my_num. pan_yurek
 */
-function printStringReturnNumber($string)
+function printStringReturnNumber($string): string
 {
     echo $string;
     return strlen($string);
@@ -156,4 +156,25 @@ echo "\nLen this sentence: ".$my_num;
 
 // №4 (＞︿＜)
 
+function increaseEnthusiasm($string): string
+{
+    $string .= '!';
+    return($string);
+}
+echo "\nWork function increaseEnthusiasm: ".increaseEnthusiasm("123");
 
+function repeatTreeTimes($string): string
+{
+    return str_repeat($string, 3);
+}
+echo  "\nWork function repeatTreeTimes: ".repeatTreeTimes("1"). "\n";
+
+echo  increaseEnthusiasm(repeatTreeTimes('1'));
+
+function cut($string, $integer = 10):string
+{
+    $stringNew = substr($string,0,$integer);
+    return $stringNew;
+}
+
+echo "\n".cut("0123456789",2)."\n";
