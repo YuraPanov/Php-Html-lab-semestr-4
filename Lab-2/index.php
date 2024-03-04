@@ -177,3 +177,8 @@ function cut($string, $integer = 10):string
 }
 
 echo "\n".cut("0123456789",2)."\n";
+
+function past()
+{
+
+}
