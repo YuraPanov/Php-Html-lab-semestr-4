@@ -177,8 +177,66 @@ function cut($string, $integer = 10):string
 }
 
 echo "\n".cut("0123456789",2)."\n";
-
-function past()
+echo "\n";
+function typeArray($array, $integer = 0)
 {
-
+    if ($integer<sizeof($array)){
+        echo $array[$integer] ."\n";
+        typeArray($array, $integer + 1);
+    }
 }
+typeArray($array);
+
+function sumNumbers($numbers): int
+{
+    while ($numbers > 9) {
+        $sum = 0;
+        while ($numbers != 0) {
+            $sum += $numbers % 10;
+            $numbers = (int)($numbers / 10);
+        }
+        $numbers = $sum;
+    }
+    return $numbers;
+}
+$number = 172;
+echo "\n".sumNumbers($number)."\n";
+
+function fillArrayX($length): array
+{
+    $array = array();
+    for($i = 0; $i < $length; $i++) {
+        $array[$i] = str_repeat('x', $i + 1);
+    }
+    return $array;
+}
+print_r(fillArrayX(5));
+
+function arrayFill($value, $length) {
+    $array = array();
+
+    for ($i = 0; $i < $length; $i++) {
+        $array[] = $value;
+    }
+
+    return $array;
+}
+print_r(arrayFill('x', 5));
+
+function sumTwoDimensionalArray($array) {
+    $sum = 0;
+    // Обходим каждый подмассив внешнего массива
+    foreach ($array as $subArray) {
+        // Обходим каждый элемент внутреннего подмассива
+        foreach ($subArray as $element) {
+            $sum += $element; // Добавляем значение элемента к сумме
+        }
+    }
+
+    return $sum; // Возвращаем сумму элементов
+}
+// Пример двумерного массива
+$array = [[1, 2, 3], [4, 5], [6]];
+// Вызываем функцию для нахождения суммы элементов массива
+echo "Сумма элементов массива: " .  sumTwoDimensionalArray($array);
+
