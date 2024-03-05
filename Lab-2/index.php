@@ -212,7 +212,8 @@ function fillArrayX($length): array
 }
 print_r(fillArrayX(5));
 
-function arrayFill($value, $length) {
+function arrayFill($value, $length): array
+{
     $array = array();
 
     for ($i = 0; $i < $length; $i++) {
@@ -223,7 +224,8 @@ function arrayFill($value, $length) {
 }
 print_r(arrayFill('x', 5));
 
-function sumTwoDimensionalArray($array) {
+function sumTwoDimensionalArray($array): int
+{
     $sum = 0;
     // Обходим каждый подмассив внешнего массива
     foreach ($array as $subArray) {
@@ -238,5 +240,25 @@ function sumTwoDimensionalArray($array) {
 // Пример двумерного массива
 $array = [[1, 2, 3], [4, 5], [6]];
 // Вызываем функцию для нахождения суммы элементов массива
-echo "Сумма элементов массива: " .  sumTwoDimensionalArray($array);
+echo "Сумма элементов массива: " .  sumTwoDimensionalArray($array). "\n";
+
+function createTwoDimensionalArray($rows, $columns): array
+{
+    $array = array(); // Создаем пустой массив
+
+    // Внешний цикл для создания строк
+    for ($i = 0; $i < $rows; $i++) {
+        $subArray = array(); // Создаем пустой внутренний массив для каждой строки
+
+        // Вложенный цикл для создания элементов внутреннего массива
+        for ($j = 1; $j <= $columns; $j++) {
+            $subArray[] = $i * $columns + $j; // Добавляем элемент во внутренний массив
+        }
+
+        $array[] = $subArray; // Добавляем внутренний массив во внешний массив
+    }
+    return $array; // Возвращаем созданный массив
+}
+// Пример использования функции cоздаем массив из 3 строк и 3 столбцов
+print_r (createTwoDimensionalArray(3, 3));
 
