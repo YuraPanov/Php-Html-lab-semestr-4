@@ -373,15 +373,6 @@ $result = array_combine($letters, $numbers);
 print_r($result);
 
 $string = '1234567890';
-
-// Разбиваем строку на массив из пар чисел
-$pairs = str_split($string, 2);
-
-// Преобразуем каждую пару в число и суммируем их
-$sum = array_sum(array_map('intval', $pairs));
-
-
-$string = '1234567890';
 $pairs = str_split($string, 2);
 $sum = array_sum(array_map('intval', $pairs));
 echo "Сумма пар чисел: " . $sum;
