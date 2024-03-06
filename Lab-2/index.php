@@ -244,20 +244,19 @@ echo "Сумма элементов массива: " .  sumTwoDimensionalArray(
 
 function createTwoDimensionalArray($rows, $columns): array
 {
-    $array = array(); // Создаем пустой массив
+    $array = array();
 
     // Внешний цикл для создания строк
     for ($i = 0; $i < $rows; $i++) {
-        $subArray = array(); // Создаем пустой внутренний массив для каждой строки
-
-        // Вложенный цикл для создания элементов внутреннего массива
+        $subArray = array();
+        // Цикл для создания элементов внутреннего массива
         for ($j = 1; $j <= $columns; $j++) {
             $subArray[] = $i * $columns + $j; // Добавляем элемент во внутренний массив
         }
 
         $array[] = $subArray; // Добавляем внутренний массив во внешний массив
     }
-    return $array; // Возвращаем созданный массив
+    return $array;
 }
 // Пример использования функции cоздаем массив из 3 строк и 3 столбцов
 print_r (createTwoDimensionalArray(3, 3));
