@@ -303,7 +303,7 @@ $arr = ['a', 'b', 'c', 'd', 'e'];
 echo "\nLast element: " . $arr[count($arr) - 1] . "\n";
 
 // Вывод предпоследнего элемента массива
-echo "The penultimate one in array: " . $arr[count($arr) - 2];
+echo "The penultimate one in array: " . $arr[count($arr) - 2]. "\n";
 
 function checkSumGreaterThan10($num1, $num2) {
     $sum = $num1 + $num2;
@@ -319,4 +319,69 @@ function checkSumGreaterThan10($num1, $num2) {
 $number1 = 5;
 $number2 = 7;
 $result = checkSumGreaterThan10($number1, $number2);
-echo $result ? 'true' : 'false';
+echo "\n".$result ? 'true' : 'false'."\n";
+$test = 0;
+echo "\n";
+echo $test == 0 ? 'верно' : '';
+
+$age = 56;
+
+if ($age < 10 || $age > 99) {
+    echo "Число вне диапазона от 10 до 99.";
+} else {
+    $sum = array_sum(str_split($age));
+    if ($sum <= 9) {
+        echo "\nСумма цифр однозначна.";
+    } else {
+        echo "\nСумма цифр двузначна.";
+    }
+}
+
+$arr = [1, 2, 3];
+if (count($arr) == 3) {
+    $sum = array_sum($arr);
+    echo "\nСумма элементов массива: " . $sum;
+}
+
+$rows = 20;
+
+
+for ($i = 1; $i <= $rows; $i++) {
+    // Внутренний цикл для рисования "x" в каждом ряду
+    for ($j = 1; $j <= $i; $j++) {
+        echo "x";
+    }
+    echo "\n";
+}
+
+$array = [1, 2, 3, 4, 5];
+$average = array_sum($array) / count($array);
+
+echo "Среднее арифметическое элементов массива: " . $average;
+
+$n = 100;
+$sum = $n * ($n + 1) / 2;
+echo "\nСумма чисел от 1 до 100: " . $sum;
+
+$numbers = [1, 4, 9, 16, 25];
+$squareRoots = array_map('sqrt', $numbers);
+print_r($squareRoots);
+
+$numbers = range(1, 26);
+$letters = range('a', 'z');
+$result = array_combine($letters, $numbers);
+print_r($result);
+
+$string = '1234567890';
+
+// Разбиваем строку на массив из пар чисел
+$pairs = str_split($string, 2);
+
+// Преобразуем каждую пару в число и суммируем их
+$sum = array_sum(array_map('intval', $pairs));
+
+
+$string = '1234567890';
+$pairs = str_split($string, 2);
+$sum = array_sum(array_map('intval', $pairs));
+echo "Сумма пар чисел: " . $sum;
