@@ -261,3 +261,62 @@ function createTwoDimensionalArray($rows, $columns): array
 // Пример использования функции cоздаем массив из 3 строк и 3 столбцов
 print_r (createTwoDimensionalArray(3, 3));
 
+function calculateResult($array): int
+{
+    // Убедимся, что в массиве есть необходимое количество элементов
+    if (count($array) < 4) {
+        return "В массиве должно быть как минимум 4 элемента";
+    }
+    // Умножение первого элемента на второй и третьего на четвертый
+    $result = ($array[0] * $array[1]) + ($array[2] * $array[3]);
+    return $result;
+}
+$array = array(2, 5, 3, 9);
+
+echo "\n Result" . calculateResult($array);
+
+$user = array(
+    'name' => 'Иван',
+    'surname' => 'Петров',
+    'patronymic' => 'Сергеевич'
+);
+echo "\n".$user['surname'] . ' ' . $user['name'] . ' ' . $user['patronymic']."\n";
+
+$currentDate = getdate();
+
+$date = array(
+    'year' => $currentDate['year'],
+    'month' => $currentDate['mon'],
+    'day' => $currentDate['mday']
+);
+
+echo $date['year'] . '-' . $date['month'] . '-' . $date['day'];
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+
+// Вывод количества элементов в массиве
+echo "Number items in array" . count($arr);
+
+$arr = ['a', 'b', 'c', 'd', 'e'];
+
+// Вывод последнего элемента массива
+echo "\nLast element: " . $arr[count($arr) - 1] . "\n";
+
+// Вывод предпоследнего элемента массива
+echo "The penultimate one in array: " . $arr[count($arr) - 2];
+
+function checkSumGreaterThan10($num1, $num2) {
+    $sum = $num1 + $num2;
+    if ($sum > 10)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+$number1 = 5;
+$number2 = 7;
+$result = checkSumGreaterThan10($number1, $number2);
+echo $result ? 'true' : 'false';
