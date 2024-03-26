@@ -24,7 +24,7 @@ echo 10+2;
 $lastMonth = 1187.23;
 $thisMonth = 1089.98;
 
-echo "\n". $lastMonth - $thisMonth. "\n";
+echo "\n" . ($lastMonth - $thisMonth) . "\n";
 
 // 3)
 echo "\nTask №3 (Multiplication and division) \n";
