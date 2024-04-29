@@ -13,3 +13,4 @@ services:
     image: php:8.3-fpm
     volumes:
       - ./code:/code
+      - ./vendor:/var/www/html/vendor
