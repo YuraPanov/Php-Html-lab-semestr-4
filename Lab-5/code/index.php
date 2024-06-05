@@ -1,12 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <title>Working with online table</title>
+    <meta charset="UTF-8">
+    <title>lab5</title>
+    <link rel="stylesheet" type="text/css" href="style_table.css">
 </head>
 <body>
-<div id="submission">
+<div id="form">
     <h1>Enter submission</h1>
-    <form method="post" action="save.php">
+    <form method="post">
         <label for="email">Email</label>
         <input type="email" name="email" required><br>
 
@@ -24,41 +26,72 @@
 
         <label for="content">Content</label>
         <textarea id="content" name="content" rows="20" cols="120" required></textarea><br>
+        <input type="submit" value="Save">
+        <?php
+        if (isset($_POST["email"], $_POST["categories"], $_POST["title"], $_POST["text"])) {
+            $title = $_POST["title"];
+            $description = $_POST["text"];
+            $email = $_POST["email"];
+            $category = $_POST["categories"];
 
-        <input type="submit" name="submit_broadcast" value="SUBMIT">
+            // Подключение к серверу
+            $mysqli = new mysqli('db', 'root', 'helloworld', 'web');
+
+            // Проверка соединения
+            if ($mysqli->connect_error) {
+                die("Connection failed: " . $mysqli->connect_error);
+            }
+
+            // Сохранение данных в базу данных
+            $stmt = $mysqli->prepare("INSERT INTO ad (email, title, description, category) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $email, $title, $description, $category);
+
+            if ($stmt->execute()) {
+                echo "New record created successfully";
+            } else {
+                echo "Error: " . $stmt->error;
+            }
+
+            $stmt->close();
+            $mysqli->close();
+        }
+        ?>
     </form>
 </div>
 <div id="table">
-    <h3>Uploaded submissions:</h3>
     <table>
         <thead>
         <th>Category</th>
-        <th>Email</th>
         <th>Title</th>
-        <th>Content</th>
+        <th>Description</th>
+        <th>Email</th>
         </thead>
         <tbody>
         <?php
-        require_once "vendor/autoload.php";
+        // Подключение к серверу
+        $mysqli = new mysqli('db', 'root', 'helloworld', 'web');
 
-        $client = new Google_Client();
-        $client->setAuthConfig("credentials.json");
-        $client->addScope('https://www.googleapis.com/auth/spreadsheets');
-        $service = new Google_Service_Sheets($client);
+        // Проверка соединения
+        if ($mysqli->connect_error) {
+            die("Connection failed: " . $mysqli->connect_error);
+        }
 
-        $id = "1mG9OsC3pnvIn4DWTV1Hg700gP9j6RCZXu9OP_og_XuE";
-        $sheet = "лист1";
-        $table = $service->spreadsheets_values->get($id, $sheet)->getValues();
+        // Заполнение таблицы на сайте
+        $result = $mysqli->query('SELECT * FROM ad');
 
-        if ($table !== null) {
-            foreach($table as $row) {
+        if ($result) {
+            while ($row = $result->fetch_assoc()) {
                 echo "<tr>";
-                foreach($row as $cell) {
-                    echo "<td>{$cell}</td>";
-                }
+                echo "<td>{$row['category']}</td>";
+                echo "<td>{$row['title']}</td>";
+                echo "<td>{$row['description']}</td>";
+                echo "<td>{$row['email']}</td>";
                 echo "</tr>";
             }
+            $result->free();
         }
+
+        $mysqli->close();
         ?>
         </tbody>
     </table>
